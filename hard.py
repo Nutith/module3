@@ -8,13 +8,9 @@ data_structure = [
 
 
 def calculate_structure_sum(*args):
-    if len(args[0]) == 0:
-        return 0
-
     result = 0
-    entry = args[0]
 
-    for i in entry:
+    for i in args[0]:
         if isinstance(i, list | tuple | set):
             result += calculate_structure_sum(i)
         elif isinstance(i, dict):
