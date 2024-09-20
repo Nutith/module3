@@ -10,9 +10,9 @@ data_structure = [
 def calculate_structure_sum(*args):
     result = 0
 
-    for i in args[0]:
+    for i in args:
         if isinstance(i, list | tuple | set):
-            result += calculate_structure_sum(i)
+            result += calculate_structure_sum(*i)
         elif isinstance(i, dict):
             result += calculate_structure_sum(list(zip(i.keys(), i.values())))
         elif isinstance(i, int):
@@ -24,3 +24,4 @@ def calculate_structure_sum(*args):
 
 
 print(calculate_structure_sum(data_structure))
+print(calculate_structure_sum([1, 1], [1, 1]))
